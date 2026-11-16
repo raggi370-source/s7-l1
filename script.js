@@ -40,20 +40,27 @@ class libroDigitale extends Libro {
     }
 }
 
-const elimina =document.querySelector(`.Elimina`)
-const bottone =document.querySelector("#aggiungi")
+const bottone = document.querySelector("#aggiungi");
+const lista = document.querySelector("#lista-libri");
+
 bottone.addEventListener("click", () => {
   const titolo = document.querySelector("#Titolo").value;
   const autore = document.querySelector("#Autore").value;
   const anno = document.querySelector("#Anno").value;
 
-  document.querySelector("#lista-libri").innerHTML += `
-    <li class="lista">${titolo} — ${autore} — ${anno}</li>
-    <button class="Elimina">Elimina</button>
-  `;
-
+  lista.insertAdjacentHTML("beforeend", `
+    <li class="lista">
+      ${titolo} — ${autore} — ${anno}
+      <button type="button" class="elimina">Elimina</button>
+    </li>
+  `);
 });
 
+lista.addEventListener("click", (evento) => {
+  if (evento.target.matches(".elimina")) {
+    evento.target.closest("li").remove();
+  }
+});
 // === Stato (array di libri) ===
 
 
