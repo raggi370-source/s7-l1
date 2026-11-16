@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-libreria — Settimana VII Giorno I</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+  <header class="site-header">
+    <h1>La mia libreria</h1>
+    <p>Aggiungi i tuoi libri e segnali come letti.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="form-section">
+      <!-- form per aggiungere un libro: titolo, autore, anno, formato (cartaceo/digitale) -->
+      <h2>Aggiungi un libro</h2>
+      <form id="aggiungi-libro " claas="form">
+
+        <div class="campo">
+          <label for="Titolo">Titolo</label>
+          <input type="text" id ="Titolo">
+        </div>
+        <div class="campo">
+          <label for="Autore">Autore</label>
+          <input type="text" id ="Autore">
+
+        </div>
+        <div class="campo">
+          <label for="anno">Anno</label>
+          <input type="number" id ="Anno">
+
+        </div>
+        <div class="campo">
+          <label for="formato">Formato</label>
+          <select id ="cartaceo">
+            <option>Cartaceo</option>
+            <option>Digitale</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <div class="campo-condizionale" id="campo-dimensione" hidden>
+            <label for="dimensione">Dimensione MB</label>
+            <input id="dimensione" type="number" step="0.1">
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn-primary" id="aggiungi">Aggiungi</button>
+      </form>
+    </section>
+
+    <section class="lista-section">
+      <h2>I tuoi libri</h2>
+      <ul id="lista-libri">
+        <!-- popolato da JavaScript -->
+      </ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
